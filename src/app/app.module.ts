@@ -12,6 +12,9 @@ import {HomeComponent} from './components/home/home.component';
 import {UserDetailsComponent} from './components/user-details/user-details.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import {DeactivatorService} from "./services/deactivator.service";
+import { CommentsComponent } from './components/comments/comments.component';
+import {ResolveService} from "./services/resolve.service";
+
 let routes:Routes = [
   {path: `home`, component: HomeComponent},
   {
@@ -19,7 +22,8 @@ let routes:Routes = [
     children: [{path: ':id', component: UserDetailsComponent}]
   },
   {path: `posts`, component: PostsComponent, canDeactivate:[DeactivatorService]},
-  {path:'posts/:id', component: PostDetailsComponent, canActivate:[DeactivatorService]}
+  {path:'posts/:id', component: PostDetailsComponent, canActivate:[DeactivatorService]},
+  {path:'comments', component: CommentsComponent, resolve:{data: ResolveService}}
 ]
 
 @NgModule({
@@ -32,6 +36,7 @@ let routes:Routes = [
     HomeComponent,
     UserDetailsComponent,
     PostDetailsComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
