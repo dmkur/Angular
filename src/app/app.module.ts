@@ -10,13 +10,16 @@ import {PostComponent} from './components/post/post.component';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from './components/home/home.component';
 import {UserDetailsComponent} from './components/user-details/user-details.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import {DeactivatorService} from "./services/deactivator.service";
 let routes:Routes = [
   {path: `home`, component: HomeComponent},
   {
     path: `users`, component: UsersComponent,
     children: [{path: ':id', component: UserDetailsComponent}]
   },
-  {path: `posts`, component: PostsComponent},
+  {path: `posts`, component: PostsComponent, canDeactivate:[DeactivatorService]},
+  {path:'posts/:id', component: PostDetailsComponent, canActivate:[DeactivatorService]}
 ]
 
 @NgModule({
@@ -28,6 +31,7 @@ let routes:Routes = [
     PostComponent,
     HomeComponent,
     UserDetailsComponent,
+    PostDetailsComponent,
   ],
   imports: [
     BrowserModule,

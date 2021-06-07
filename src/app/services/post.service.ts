@@ -14,4 +14,7 @@ private postsList = `https://jsonplaceholder.typicode.com/posts`
   getPosts():Observable<IPost[]>{
     return this.httpClient.get<IPost[]>(this.postsList)
   }
+  getPost(id:string):Observable<IPost>{
+  return this.httpClient.get<IPost>(this.postsList + "/" + id)
+  }
 }
