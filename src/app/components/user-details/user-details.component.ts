@@ -17,7 +17,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(history.state);
+    //console.log(history.state);
   }
 
 }
