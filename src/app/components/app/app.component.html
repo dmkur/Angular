@@ -1,0 +1,13 @@
+<div [className]="['wrapper']">
+
+  <ul>
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li><a [routerLink]="['about']">About</a></li>
+    <li><a [routerLink]="['users']">Users Module</a></li>
+    <li><a [routerLink]="['posts']">Posts Module</a></li>
+    <li><a [routerLink]="['comments']">Comments Module</a></li>
+  </ul>
+  <hr/>
+
+  <router-outlet></router-outlet>
+</div>
