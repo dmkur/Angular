@@ -1,0 +1,17 @@
+<div>
+  {{singleUser.id}} - {{singleUser.name}}
+
+  <div [className]="['wrapper']">
+    <div>
+      <button (click)="userDetails()">Details 1</button>
+    </div>
+
+    <div>
+      <a [routerLink]="['']">
+        <button>Details 2</button>
+      </a>
+    </div>
+
+  </div>
+</div>
+
