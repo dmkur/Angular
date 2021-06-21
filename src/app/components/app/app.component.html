@@ -1,7 +1,8 @@
-<div>
-  <ul>
-    <li><a [routerLink]="['users']">Users Component</a></li>
-  </ul>
+<div [className]="['mainWrapper']">
+  <div>
+    <app-users></app-users>
+  </div>
+  <div [className]="['routerWrapper']">
+    <router-outlet></router-outlet>
+  </div>
 </div>
-
-<router-outlet></router-outlet>

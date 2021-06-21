@@ -1,0 +1,8 @@
+.mainWrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.routerWrapper{
+  width: 400px;
+}

@@ -3,12 +3,12 @@
 
   <div [className]="['wrapper']">
     <div>
-      <button (click)="userDetails()">Details 1</button>
+      <button (click)="userDetails()">State Info</button>
     </div>
 
     <div>
-      <a [routerLink]="['']">
-        <button>Details 2</button>
+      <a [routerLink]="['serverInfo', singleUser.id]">
+        <button>Server Info</button>
       </a>
     </div>
 

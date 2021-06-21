@@ -14,4 +14,8 @@ export class UsersService {
   getUsers():Observable<any[]>{
     return this.httpClient.get<any[]>(this.url)
   }
+
+  getUsersById(id:string):Observable<any>{
+    return this.httpClient.get<any>(this.url + '/' + id)
+  }
 }
